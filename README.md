@@ -1,3 +1,13 @@
+RARTS project created by
+Stian Nordholm and Anders Moerk Minde
+
+Driving a mecanum car with a microbit, coded in ada, and ultra sonic sensors.
+
+
+
+
+
+
 # Ada-Embedded-Project-MicroBitV2
 Template for USN BSc intelligent real-time systems course
 

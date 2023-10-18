@@ -1,5 +1,5 @@
-package Servo is
+package RartsServo is
 
-   
+   procedure RunServo;
 
-end Servo;
+end RartsServo;

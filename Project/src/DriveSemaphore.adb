@@ -1,17 +1,22 @@
-package body driveBool is
-
-   protected body driveBool is
+package body RartsDriveSemaphore is
+   protected body DriveBool is
+      
       function Get return Boolean is
       begin
          return Value;
       end Get;
       
       procedure Change is
+
       begin
          if Value = True then
             Value := False;
          elsif Value = False then
-            Value := True
-      end Change;
+         Value := True;
+         end if;
       
-end driveBool;
+      end Change;
+
+   end DriveBool;
+      
+end RartsDriveSemaphore;

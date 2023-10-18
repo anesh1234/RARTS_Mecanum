@@ -1,21 +1,23 @@
-with MicroBit.Servos;  use MicroBit.Servos;
+with MicroBit.MotorDriver; use MicroBit.MotorDriver; --using the procedures defined here
+with DFR0548;  -- using the types defined here
 
+package body RartsServo is
+   procedure RunServo is
 
-procedure RartsServo is
-   -- this example requires you to wire two 2 servo motors to pin Microbit 1 and 2. It is recommended to power the servos's with 5V (check the spec sheet)
-   -- while the IO signal from the microbit s 3.3V
+      Max : DFR0548.Degrees := 90;
+      Min : DFR0548.Degrees := 0;
 
-   -- define the micro:bit v2 pins where 2 servo's are attached.
-   Pin_Id : Servo_Pin_Id := 8;
-   Angle : Servo_Set_Point := 0;
+   begin
 
-begin
-   loop
+      loop
 
-      Go (Pin_Id, Angle + 180);
-      delay(0.02);
-      Go (Pin_Id, Angle);
-      delay(0.02);
+         MotorDriver.Servo(8, Max);
+         delay(0.02);
+         MotorDriver.Servo(8, Min);
+         delay(0.02);
 
-   end loop;
+      end loop;
+
+   end RunServo;
+
 end RartsServo;

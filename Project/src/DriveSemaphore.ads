@@ -1,10 +1,13 @@
-package DriveSemaphore is
+package RartsDriveSemaphore is
 
-   protected DriveBool is
+   protected type DriveBool is
+
       function Get return Boolean;
       procedure Change;
+
    private
       Value : Boolean := True;
+
    end DriveBool;
 
-end DriveSemaphore;
+end RartsDriveSemaphore;

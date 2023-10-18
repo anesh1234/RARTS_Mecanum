@@ -1,10 +1,10 @@
 package DriveSemaphore is
 
-   protected driveBool is
+   protected DriveBool is
       function Get return Boolean;
       procedure Change;
    private
       Value : Boolean := True;
-   end driveBool;
+   end DriveBool;
 
 end DriveSemaphore;

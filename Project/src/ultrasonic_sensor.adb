@@ -22,18 +22,19 @@ with MicroBit.Console; use MicroBit.Console;
 with MicroBit.Types; use MicroBit.Types;
 use MicroBit;
 
-procedure Main with Priority => 0 is
-   package sensor1 is new Ultrasonic(MB_P16, MB_P0);
-  -- package sensor2 is new Ultrasonic;
+procedure UltrasonicRead with Priority => 0 is
+   package sensor1 is new Ultrasonic(MB_P16, MB_P15);
+   package sensor2 is new Ultrasonic(MB_P13, MB_P12);
 
-   Distance : Distance_cm := 0;
+   DistanceBack : Distance_cm := 0;
+   DistanceFront : Distance_cm := 0;
 begin
    loop
       Put_Line ("x");
-      Distance := sensor1.Read;
-      Put_Line ("Front: " & Distance_cm'Image(Distance)); -- a console line delay the loop significantly
-     -- Distance := sensor2.Read;
-     -- Put_Line ("Left: " & Distance_cm'Image(Distance)); -- a console line delay the loop significantly
+      DistanceBack := sensor1.Read;
+      Put_Line ("Back: " & Distance_cm'Image(DistanceBack)); -- a console line delay the loop significantly
+      DistanceFront := sensor2.Read;
+      Put_Line ("Front: " & Distance_cm'Image(DistanceFront)); -- a console line delay the loop significantly
 
       --NOTE: A delay directly after a read of about 50ms is needed if only 1 sensor
       -- or when multiple, have more than 1 sensor face the same direction
@@ -41,4 +42,4 @@ begin
       delay 0.05; --50 ms
    end loop;
 
-end Main;
+end UltrasonicRead;

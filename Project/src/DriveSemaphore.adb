@@ -1,12 +1,12 @@
 package body RartsDriveSemaphore is
    protected body DriveBool is
       
-      function Get return Boolean is
+      function Read return Boolean is
       begin
          return Value;
-      end Get;
+      end Read;
       
-      procedure Change is
+      procedure Write is
 
       begin
          if Value = True then
@@ -15,7 +15,7 @@ package body RartsDriveSemaphore is
          Value := True;
          end if;
       
-      end Change;
+      end Write;
 
    end DriveBool;
       

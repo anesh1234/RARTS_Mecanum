@@ -1,5 +1,11 @@
-with MicroBit.IOsForTasking;  use MicroBit.IOsForTasking;
+-- pragma Profile (Ravenscar);
+
+-- Predefined child packages of package Ada
+with Ada.Real_Time;
+
+-- Packages for interfacing with Microbit and the DFR0548 driver card
 with MicroBit;
+with MicroBit.IOsForTasking;  use MicroBit.IOsForTasking;
 with MicroBit.MotorDriver; use MicroBit.MotorDriver; --using the procedures defined here
 with DFR0548;  -- using the types defined here
 with MicroBit.Console; use MicroBit.Console; -- for serial port communication

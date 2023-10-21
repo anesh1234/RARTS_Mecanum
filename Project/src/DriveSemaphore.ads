@@ -2,8 +2,8 @@ package RartsDriveSemaphore is
 
    protected type DriveBool is
 
-      function Get return Boolean;
-      procedure Change;
+      function Read return Boolean;
+      procedure Write;
 
    private
       Value : Boolean := True;

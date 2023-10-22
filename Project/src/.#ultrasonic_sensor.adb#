@@ -3,7 +3,7 @@ with MicroBit.Console; use MicroBit.Console;
 with MicroBit.Types; use MicroBit.Types;
 use MicroBit;
 
-package body RartsUltrasonic is
+package body ultrasonic_sensors is
 
    procedure ReadBack with Priority => 0 is
       package sensor1 is new Ultrasonic(MB_P16, MB_P15);
@@ -36,4 +36,4 @@ package body RartsUltrasonic is
 
    end ReadFront;
 
-end RartsUltrasonic;
+end ultrasonic_sensors;

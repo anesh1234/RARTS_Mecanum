@@ -1,6 +1,6 @@
-package RartsUltrasonic is
+package ultrasonic_sensor is
 
    procedure ReadBack with Priority => 0;
    procedure ReadFront with Priority => 0;
 
-end RartsUltrasonic;
+end ultrasonic_sensor;

@@ -1,10 +1,13 @@
 -- pragma Profile (Ravenscar);
 
--- Predefined child packages of package Ada
+-- Our packages:
+
+
+-- Predefined child packages of package Ada:
 with Ada.Real_Time;
 
--- Packages for interfacing with Microbit and the DFR0548 driver card
-with MicroBit;
+-- Packages for interfacing with Microbit and the DFR0548 driver card:
+with MicroBit.Types; use MicroBit.Types;
 with MicroBit.IOsForTasking;  use MicroBit.IOsForTasking;
 with MicroBit.MotorDriver; use MicroBit.MotorDriver; --using the procedures defined here
 with DFR0548;  -- using the types defined here
@@ -12,6 +15,34 @@ with MicroBit.Console; use MicroBit.Console; -- for serial port communication
 use MicroBit; --for pin names
 
 procedure Main is
+Threshold : Distance_cm := 5;
+
+   task CheckFront;
+   task CheckBack;
+
+   task body CheckFront is
+      package sensor1 is new Ultrasonic(MB_P13, MB_P12);
+      DistanceFront : Distance_cm := 0;
+   begin
+      loop
+         Put_Line ("y");
+         DistanceFront := sensor1.Read;
+         Put_Line ("Front: " & Distance_cm'Image(DistanceFront)); -- a console line delay the loop significantly
+         delay 0.05; --50 ms
+      end loop;
+   end CheckFront;
+
+   task body CheckBack is
+      package sensor2 is new Ultrasonic(MB_P16, MB_P15);
+      DistanceBack : Distance_cm := 0;
+      begin
+         loop
+            Put_Line ("x");
+            DistanceBack := sensor2.Read;
+            Put_Line ("Back: " & Distance_cm'Image(DistanceBack)); -- a console line delay the loop significantly
+         delay 0.05; --50 ms
+      end loop;
+      end CheckBack;
 
 begin
    MotorDriver.Servo(1,90);

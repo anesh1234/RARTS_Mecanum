@@ -1,7 +1,7 @@
 with MicroBit.MotorDriver; use MicroBit.MotorDriver; --using the procedures defined here
 with DFR0548;  -- using the types defined here
 
-package body RartsServo is
+package body rarts_servo is
    procedure RunServo is
 
       Max : DFR0548.Degrees := 90;
@@ -20,4 +20,4 @@ package body RartsServo is
 
    end RunServo;
 
-end RartsServo;
+end rarts_servo;

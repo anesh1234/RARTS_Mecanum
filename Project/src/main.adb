@@ -1,76 +1,21 @@
--- Our packages:
+--with MyController; -- This embeds and instantiates the MyController package
+with MyController_empty;
 
+-- NOTE ----------
+-- See the MyController_empty package first for a single file empty Sense-Think-Act (STA) template
+-- The MyController package contains a better structured STA template with each task having its own file
+-- Build your own controller from scratch using the template and structured coding principles as a guide line.
+-- Use
+------------------
 
--- Predefined child packages of package Ada:
-with Ada.Real_Time; use Ada.Real_Time;
+--Empty main running as a task currently set to lowest priority. Can be used as it is a normal task!
 
--- Packages for interfacing with Microbit and the DFR0548 driver card:
-with MicroBit.Types; use MicroBit.Types;
-with MicroBit.IOsForTasking;  use MicroBit.IOsForTasking;
-with MicroBit.MotorDriver; use MicroBit.MotorDriver; --using the procedures defined here
-with DFR0548;  -- using the types defined here
-with MicroBit.Console; use MicroBit.Console; -- for serial port communication
-use MicroBit; --for pin names
-
-procedure Main is
-Threshold : Distance_cm := 5;
-
-   task CheckFront;
-   task CheckBack;
-
-   task body CheckFront is
-      package sensor1 is new Ultrasonic(MB_P13, MB_P12);
-      DistanceFront : Distance_cm := 0;
-      Minor_Cycle constant : Time_Span = Milliseconds(50);
-      Next : Time := Clock + Minor_Cycle;
-   begin
-      loop
-         Put_Line ("y");
-         DistanceFront := sensor1.Read;
-         Put_Line ("Front: " & Distance_cm'Image(DistanceFront)); -- a console line delay the loop significantly
-         delay until Next;
-         Next := Next + Minor_Cyc1e;
-      end loop;
-   end CheckFront;
-
-   task body CheckBack is
-      package sensor2 is new Ultrasonic(MB_P16, MB_P15);
-      DistanceBack : Distance_cm := 0;
-      Minor_Cycle constant : Time_Span = Milliseconds(50);
-      Next : Time := Clock + Minor_Cycle;
-   begin
-         loop
-            Put_Line ("x");
-            DistanceBack := sensor2.Read;
-            Put_Line ("Back: " & Distance_cm'Image(DistanceBack)); -- a console line delay the loop significantly
-         delay until Next;
-         Next := Next + Minor_Cyc1e;
-      end loop;
-      end CheckBack;
+Procedure Main with Priority => 0 is
 
 begin
-   MotorDriver.Servo(1,90);
-   delay 1.0; -- equivalent of Time.Sleep(1000) = 1 second
-
-   loop
-      --   DEMONSTRATION ROUTINE 4 MOTORS (useful for checking your wiring)
-      --  MotorDriver.Drive(Forward,(4095,0,0,0)); --right front wheel to M4
-      --  delay 1.0;
-      --  MotorDriver.Drive(Forward,(0,4095,0,0)); --right back wheel to M3
-      --  delay 1.0;
-      --  MotorDriver.Drive(Forward,(0,0,4095,0)); --left front wheel to M2
-      --  delay 1.0;
-      --  MotorDriver.Drive(Forward,(0,0,0,4095)); --left back wheel to M1
-      --  delay 1.0;
-      --  MotorDriver.Drive(Stop);
-
-
-      MotorDriver.Drive(Forward);
-      delay 1.0;
-      MotorDriver.Drive(stop);
-
-      delay 3.0;
-
-
+   loop -- We need a main loop, otherwise it constantly reboots!
+        -- A reboot can be seen in the Serial Ports (View -> Serial Port, select com port, set baudrate to 115200 and press reset button on Microbit)
+        -- Every time the Micro:Bit reboots it will begin with a "0" symbol in your Serial Port monitor.
+      null;
    end loop;
 end Main;

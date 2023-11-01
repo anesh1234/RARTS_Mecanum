@@ -1,9 +1,18 @@
 With Ada.Real_Time; use Ada.Real_Time;
+with MicroBit.Ultrasonic;
+with MicroBit.Types; use MicroBit.Types;
+use MicroBit;
+
+with MyBrain; use MyBrain;
 
 package body TaskSense is
 
     task body sense is
       myClock : Time;
+      package sensorFront is new Ultrasonic(MB_P13, MB_P12);
+      package sensorBack is new Ultrasonic(MB_P16, MB_P15);
+      DistanceFront : Distance_cm;
+      DistanceBack : Distance_cm;
    begin
       
       null; -- note that you can place Setup code here that is only run once for the entire task
@@ -16,12 +25,11 @@ package body TaskSense is
                            --When Worst Case Execution Time (WCET) is overrun so higher than your set period, see : https://www.sigada.org/ada_letters/dec2003/07_Puente_final.pdf
                            --In this template we put the responsiblity on the designer/developer.
          
-         delay (0.024); --simulate a sensor eg the ultrasonic sensors needs at least 24ms for 400cm range, replace with your code!!!
-                        -- to integrate for example an ultrasonic sensor: copy paste the ultrasonic package for the ultrasonic example to the src directory
-                        -- include it using  "with ultrasonic; use ultrasonic". The ultrasonic sensor uses type Distance_CM how can we make that compatible with our Brain.SetMeasurementSensor1?  
-         
-         Brain.SetMeasurementSensor1 (10); -- random value, hook up a sensor here note that you might need to either cast to integer OR -better- change type of Brain.SetMeasurementSensor1
-         Brain.SetMeasurementSensor2 (1); -- random value, hook up another sensor here
+         DistanceFront := sensorFront.Read;
+         DistanceBack := sensorBack.Read;
+    
+         Brain.SetMeasurementSensorFront (DistanceFront);
+         Brain.SetMeasurementSensorBack (DistanceBack);
             
          delay until myClock + Milliseconds(200); --random period
       end loop;

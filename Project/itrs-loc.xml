@@ -2,41 +2,9 @@
 <Locations >
   <Project>
     <vfs_file />
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project />
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\Tasks\taskact.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
+    <file_marker column=" 6" line=" 14" >
       <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
       <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\Tasks\taskthink.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\Tasks\taskthink.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 4" line=" 8" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\mycontroller.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\POs\mybrain.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 13" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\POs\mybrain.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Project\src\POs\mymotordriver.ads</vfs_file>
     </file_marker>
     <file_marker current="true" column=" 1" line=" 1" >
       <vfs_project />

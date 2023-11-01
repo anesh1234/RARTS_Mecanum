@@ -1,14 +1,16 @@
+with MicroBit.Types; use MicroBit.Types;
+
 package MyBrain is
 
    protected Brain is
-      function GetMeasurementSensor1 return Integer; -- concurrent read operations are now possible
-      function GetMeasurementSensor2 return Integer; -- concurrent read operations are now possible
+      function GetMeasurementSensorFront return Distance_cm; -- concurrent read operations are now possible
+      function GetMeasurementSensorBack return Distance_cm; -- concurrent read operations are now possible
   
-      procedure SetMeasurementSensor1 (V : Integer); -- but concurrent read/write are not!
-      procedure SetMeasurementSensor2 (V : Integer); -- but concurrent read/write are not!
+      procedure SetMeasurementSensorFront (V : Distance_cm); -- but concurrent read/write are not!
+      procedure SetMeasurementSensorBack (V : Distance_cm); -- but concurrent read/write are not!
    private
-         MeasurementSensor1 : Integer := 0;
-         MeasurementSensor2 : Integer := 0;
+         MeasurementSensorFront : Distance_cm := 0;
+         MeasurementSensorBack : Distance_cm := 0;
    end Brain;
 
 end MyBrain;

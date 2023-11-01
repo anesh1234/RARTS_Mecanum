@@ -9,7 +9,7 @@ package body TaskThink is
          myClock := Clock;
         
          --make a decision (could be wrapped nicely in a procedure)
-         if Brain.GetMeasurementSensor1 > 5 and Brain.GetMeasurementSensor2 = 1 then            
+         if Brain.GetMeasurementSensorFront > 5 then
             MotorDriver.SetDirection (Forward); --our decision what to do based on the sensor values        
          else
             MotorDriver.SetDirection (Stop); 

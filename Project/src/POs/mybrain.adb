@@ -3,28 +3,28 @@ package body MyBrain is
      
     protected body Brain is
       --  procedures can modify the data
-      procedure SetMeasurementSensor1 (V : Integer) is
+      procedure SetMeasurementSensorFront (V : Distance_cm) is
       begin
-         MeasurementSensor1 := V;
-      end SetMeasurementSensor1;
+         MeasurementSensorFront := V;
+      end SetMeasurementSensorFront;
 
       --  functions cannot modify the data
-      function GetMeasurementSensor1 return Integer is
+      function GetMeasurementSensorFront return Distance_cm is
       begin
-         return MeasurementSensor1;
-      end GetMeasurementSensor1;
+         return MeasurementSensorFront;
+      end GetMeasurementSensorFront;
       
       --  procedures can modify the data
-      procedure SetMeasurementSensor2 (V : Integer) is
+      procedure SetMeasurementSensorBack (V : Distance_cm) is
       begin
-         MeasurementSensor2 := V;
-      end SetMeasurementSensor2;
+         MeasurementSensorBack := V;
+      end SetMeasurementSensorBack;
 
       --  functions cannot modify the data
-      function GetMeasurementSensor2 return Integer is
+      function GetMeasurementSensorBack return Distance_cm is
       begin
-         return MeasurementSensor2;
-      end GetMeasurementSensor2;
+         return MeasurementSensorBack;
+      end GetMeasurementSensorBack;
    end Brain;
 
 end MyBrain;

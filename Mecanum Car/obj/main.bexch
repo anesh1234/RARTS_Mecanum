@@ -1,0 +1,28 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr
+20231101100550 d33355019ab8751e21c62f16162ff7da
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Ada_Drivers_Library\boards\MicroBit_v2\microbit_v2_full.gpr
+20231018122642 21873839f0bd7dbabbba796d62b2bed5
+[BOUND OBJECT FILES]
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\mybrain.o
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\mymotordriver.o
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\taskact.o
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\tasksense.o
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\taskthink.o
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\mycontroller.o
+C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LC:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\
+-LC:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\obj\
+-LC:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Ada_Drivers_Library\boards\MicroBit_v2\obj\full_lib_Debug\
+-LC:\gnat\2021-arm-elf\arm-eabi\lib\gnat\ravenscar-full-nrf52833\adalib\
+-static
+-static-libgcc
+C:\gnat\2021-arm-elf\arm-eabi\lib\gnat\ravenscar-full-nrf52833\adalib\libgnarl.a
+C:\gnat\2021-arm-elf\arm-eabi\lib\gnat\ravenscar-full-nrf52833\adalib\libgnat.a

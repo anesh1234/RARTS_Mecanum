@@ -27,6 +27,8 @@ package ada_main is
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
+   --  ada.characters%s
+   --  ada.characters.latin_1%s
    --  interfaces%s
    --  system%s
    --  ada.io_exceptions%s
@@ -34,6 +36,8 @@ package ada_main is
    --  gnat%s
    --  interfaces.nrf52%s
    --  interfaces.nrf52.clock%s
+   --  system.address_operations%s
+   --  system.address_operations%b
    --  system.bb%s
    --  system.bb.board_parameters%s
    --  system.bb.cpu_specific%s
@@ -77,6 +81,8 @@ package ada_main is
    --  system.wch_cnv%b
    --  system.address_image%s
    --  system.address_image%b
+   --  system.compare_array_unsigned_8%s
+   --  system.compare_array_unsigned_8%b
    --  system.traceback%s
    --  system.traceback%b
    --  ada.strings.utf_encoding%s
@@ -172,8 +178,20 @@ package ada_main is
    --  ada.real_time%b
    --  ada.real_time.delays%s
    --  ada.real_time.delays%b
+   --  ada.real_time.timing_events%s
+   --  ada.real_time.timing_events%b
    --  system.assertions%s
    --  system.assertions%b
+   --  system.bit_ops%s
+   --  system.bit_ops%b
+   --  ada.strings.maps%s
+   --  ada.strings.maps%b
+   --  ada.strings.search%s
+   --  ada.strings.search%b
+   --  ada.strings.fixed%s
+   --  ada.strings.fixed%b
+   --  ada.strings.unbounded%s
+   --  ada.strings.unbounded%b
    --  system.pool_global%s
    --  system.pool_global%b
    --  system.relative_delays%s
@@ -218,6 +236,8 @@ package ada_main is
    --  nrf_svd.uart%s
    --  nrf_svd.uicr%s
    --  nrf_svd.wdt%s
+   --  generic_timers%s
+   --  generic_timers%b
    --  hal.gpio%s
    --  hal.i2c%s
    --  hal.spi%s
@@ -262,12 +282,12 @@ package ada_main is
    --  microbit.console%b
    --  dfr0548%s
    --  dfr0548%b
+   --  microbit.displayrt%s
+   --  microbit.displayrt%b
    --  microbit.i2c%s
    --  microbit.i2c%b
    --  microbit.iosfortasking%s
    --  microbit.iosfortasking%b
-   --  microbit.motordriver%s
-   --  microbit.motordriver%b
    --  microbit.radio%s
    --  microbit.radio%b
    --  microbit.timehighspeed%s
@@ -275,10 +295,10 @@ package ada_main is
    --  microbit.types%s
    --  microbit.ultrasonic%s
    --  microbit.ultrasonic%b
+   --  rartsmotordriver%s
+   --  rartsmotordriver%b
    --  mybrain%s
    --  mybrain%b
-   --  mymotordriver%s
-   --  mymotordriver%b
    --  taskact%s
    --  taskact%b
    --  tasksense%s

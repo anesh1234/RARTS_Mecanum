@@ -44,7 +44,7 @@ package body MyBrain is
       end SetRXdata;
       
       
-      function GetRXdata return UInt8 is
+      function GetRXdata return RartsUInt8 is
       begin
          return MyRxdata;
       end GetRXdata;

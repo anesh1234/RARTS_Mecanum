@@ -1,4 +1,3 @@
-
 with MyBrain; use MyBrain;
 
 package body TaskSense is

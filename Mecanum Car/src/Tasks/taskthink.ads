@@ -1,8 +1,7 @@
 with MicroBit.Types; use MicroBit.Types;
 With Ada.Real_Time; use Ada.Real_Time;
 with MyBrain; use MyBrain;
-
--- with rarts-motordriver; use rarts-motordriver
+with HAL;     use HAL;
 
 package TaskThink is
 
@@ -10,6 +9,7 @@ package TaskThink is
    procedure DriveAutomatic;
    procedure InterpretRadio;
    
-   private 
-      Threshold : Distance_cm := 10;
+private 
+   Threshold : Distance_cm := 10;
+   MyRXdata  : RartsUInt8 := 0;
 end TaskThink;

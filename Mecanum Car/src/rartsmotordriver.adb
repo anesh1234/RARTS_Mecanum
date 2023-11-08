@@ -1,5 +1,5 @@
 with MicroBit.I2C;
-package body RARTS.MotorDriver is
+package body RartsMotorDriver is
 
 
    MD  : DFR0548.MotorDriver (MicroBit.I2C.ControllerExt);
@@ -23,6 +23,11 @@ package body RARTS.MotorDriver is
                          rb => (Speed.rb, 0),
                          lf => (Speed.lf, 0),
                          lb => (Speed.lb, 0));
+         when Back =>
+            Drive_Wheels(rf => (0, Speed.rf),
+                         rb => (0, Speed.rb),
+                         lf => (0, Speed.lf),
+                         lb => (0, Speed.lb));
          when Left =>
             Drive_Wheels(rf => (Speed.rf ,0),
                          rb => (0, Speed.rb),
@@ -78,4 +83,4 @@ package body RARTS.MotorDriver is
 
 begin
    Initialize;
-end RARTS.MotorDriver;
+end RartsMotorDriver;

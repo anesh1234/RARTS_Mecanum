@@ -1,3 +1,5 @@
+with RartsMotorDriver; use RartsMotorDriver;
+
 package body TaskThink is
 
   task body think is
@@ -19,9 +21,9 @@ package body TaskThink is
       procedure DriveAutomatic is
       begin
          if Brain.GetMeasurementSensorFront > Threshold then
-            MotorDriver.SetDirection (Forward); --our decision what to do based on the sensor values        
+            Brain.SetDirection (Forward); --our decision what to do based on the sensor values        
          else
-            MotorDriver.SetDirection (Stop); 
+            Brain.SetDirection (Stop); 
          end if;
    end DriveAutomatic;
    
@@ -30,17 +32,18 @@ package body TaskThink is
    begin
       if MyRxdata > 0 then
          case MyRxdata is
-            when 1     =>   SetModeBool (True);
-            when 2     =>   SetModeBool (False);
-            when 3     =>   MotorDriver.SetDirection (Forward);
-            when 4     =>   MotorDriver.SetDirection (Back);
-            when 5     =>   MotorDriver.SetDirection (Left);
-            when 6     =>   MotorDriver.SetDirection (Right);
-            when 7     =>   MotorDriver.SetDirection (DiaFl);
-            when 8     =>   MotorDriver.SetDirection (DiaFR);
-            when 9     =>   MotorDriver.SetDirection (DiaBL);
-            when 10    =>   MotorDriver.SetDirection (DiaBR);
-            when 11    =>   MotorDriver.SetDirection (Stop);
+            when 0     =>   null;
+            when 1     =>   Brain.SetModeBool (True);
+            when 2     =>   Brain.SetModeBool (False);
+            when 3     =>   Brain.SetDirection (Forward);
+            when 4     =>   Brain.SetDirection (Back);
+            when 5     =>   Brain.SetDirection (Left);
+            when 6     =>   Brain.SetDirection (Right);
+            when 7     =>   Brain.SetDirection (Dia_Fl);
+            when 8     =>   Brain.SetDirection (Dia_FR);
+            when 9     =>   Brain.SetDirection (Dia_BL);
+            when 10    =>   Brain.SetDirection (Dia_BR);
+            when 11    =>   Brain.SetDirection (Stop);
          end case;
       end if;
    end InterpretRadio;

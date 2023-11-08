@@ -1,9 +1,10 @@
 with DFR0548; use DFR0548;
 with HAL;     use HAL;
 
-package RARTS.MotorDriver is
+package RartsMotorDriver is
 
-   type Directions is (Forward, 
+   type Directions is (Forward,
+                       Back,
                        Left,
                        Right,
                        Dia_FL,
@@ -33,4 +34,4 @@ private
 
    procedure Initialize;
 
-end RARTS.MotorDriver;
+end RartsMotorDriver;

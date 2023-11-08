@@ -31,52 +31,41 @@ begin
 
 
    loop
-      --  --check if some data received and if so print it. Note that the framebuffer can max contain x messages (currently set to 4).
-      --important! Sometimes data received contains junk since we dont do any package verification and radio transmission is noisy!
-      while Radio.DataReady loop
-         RXdata :=Radio.Receive;
-         Put("Raven Received D1: " & UInt8'Image(RXdata.Payload(1)));
-         Put_Line(" D2: " & UInt8'Image(RXdata.Payload(2)));
-      end loop;
-      --
-      --  -- setup some data to be transmitted and transmit it
-
       --Read accel data
-   AccelData := Accelerometer.AccelData;
+      AccelData := Accelerometer.AccelData;
 
-   --Logic for the accelerometer
-    MicroBit.DisplayRT.Clear;
+      --Logic for the accelerometer
+      MicroBit.DisplayRT.Clear;
 
-   if accelData.X > accelThreshold then
-      MicroBit.DisplayRT.Symbols.Left_Arrow;
-      --Todo: add data to radio packet
-   elsif accelData.X < -accelThreshold then
-      MicroBit.DisplayRT.Symbols.Right_Arrow;
-      --todo
-   elsif accelData.Y > accelThreshold then
-      MicroBit.DisplayRT.Symbols.Up_Arrow;
-      --todo
-   elsif accelData.Y < -accelThreshold then
-      MicroBit.DisplayRT.Symbols.Down_Arrow;
-      --todo
+      if MicroBit.Buttons.State (Button_A) = Pressed and MicroBit.Buttons.State (Button_B) = Pressed then
+         TransmitData(TxData, 1);
+      elsif accelData.X > accelThreshold then
+         MicroBit.DisplayRT.Symbols.Left_Arrow;
+         TransmitData(TxData, 1);
+      elsif accelData.X < -accelThreshold then
+         MicroBit.DisplayRT.Symbols.Right_Arrow;
+         TransmitData(TxData, 1);
+      elsif accelData.Y > accelThreshold then
+         MicroBit.DisplayRT.Symbols.Up_Arrow;
+         TransmitData(TxData, 1);
+      elsif accelData.Y < -accelThreshold then
+         MicroBit.DisplayRT.Symbols.Down_Arrow;
+         TransmitData(TxData, 1);
       else
          MicroBit.DisplayRT.Symbols.Heart;
 
-   end if;
-   --End of logic for accelerometer
-
-
-      if MicroBit.Buttons.State (Button_A) = Pressed and MicroBit.Buttons.State (Button_B) = Pressed then
-
-         TxData.Payload(1) := 10;
-         Put("Transmit D1: " & UInt8'Image(TXdata.Payload(1)));
-         Put_Line(" D2: " & UInt8'Image(TXdata.Payload(1)));
-         Radio.Transmit(TXdata);
-
       end if;
-      --
+      --End of logic for accelerometer
+
       -- repeat every 500ms
-        delay(0.5);
+      delay(0.5);
 
    end loop;
 end Main;
+
+
+procedure TransmitData (TXdata : Radio.RadioData; Data : UInt8) is
+begin
+   TxData.Payload(1) := Data;
+   Radio.Transmit(TXdata);
+end TransmitData;

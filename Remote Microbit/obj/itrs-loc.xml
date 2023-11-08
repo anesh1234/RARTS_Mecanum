@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_file>
+  <Project >
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
       <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
@@ -18,9 +17,41 @@
       <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
       <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 9" line=" 34" >
+    <file_marker column=" 9" line=" 34" >
       <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Ada_Drivers_Library\boards\MicroBit_v2\microbit_v2_full.gpr</vfs_project>
       <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Ada_Drivers_Library\hal\src\hal.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 51" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 44" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 42" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 45" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 40" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 64" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 68" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 4" line=" 33" >
+      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\itrs.gpr</vfs_project>
+      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Remote Microbit\src\main.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>

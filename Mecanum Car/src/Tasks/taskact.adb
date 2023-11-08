@@ -1,11 +1,10 @@
 With Ada.Real_Time; use Ada.Real_Time;
 With MicroBit.Console; use MicroBit.Console;
-with MicroBit.MotorDriver; use MicroBit.MotorDriver;
+with MicroBit.MotorDriver.Servo;
 With MicroBit.IOsForTasking; use MicroBit.IOsForTasking;
 with DFR0548;  -- using the types defined here
 
--- Our packages
-with MyMotorDriver; use MyMotorDriver;
+with MyBrain; use MyBrain;
 
 package body TaskAct is
 
@@ -17,8 +16,7 @@ package body TaskAct is
       
       loop
          myClock := Clock;
-     
-         -- Drive(MotorDriver.GetDirection, (4095,4095,4095,4095));
+         Drive(Brain.GetDirection, (4095,4095,4095,4095));
          
          Put_Line ("Direction is: " & MotorDriver.GetDirection'Image);
          

@@ -1,0 +1,4 @@
+mybrain.ads:15:36: error: "Directions" is undefined (more references follow)
+mybrain.ads:30:38: error: "Stop" is not visible
+mybrain.ads:30:38: error: non-visible declaration at nrf-timers.ads:91
+mybrain.ads:30:38: error: non-visible declaration at nrf-rtc.ads:45

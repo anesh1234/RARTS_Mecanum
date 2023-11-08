@@ -39,10 +39,15 @@ package body TaskSense is
                            --When Worst Case Execution Time (WCET) is overrun so higher than your set period, see : https://www.sigada.org/ada_letters/dec2003/07_Puente_final.pdf
                            --In this template we put the responsiblity on the designer/developer.
          
+         while Radio.DataReady loop
+            RXdata := Radio.Receive;
+            Brain.SetRXdata(RXdata.Payload(1));
+         end loop;
+         
          DistanceFront := sensorFront.Read;
-         DistanceBack := sensorBack.Read;
-    
          Brain.SetMeasurementSensorFront (DistanceFront);
+         
+         DistanceBack := sensorBack.Read;
          Brain.SetMeasurementSensorBack (DistanceBack);
             
          delay until myClock + Milliseconds(200); --random period

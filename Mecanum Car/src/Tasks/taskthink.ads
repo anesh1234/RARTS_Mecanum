@@ -1,11 +1,15 @@
-with MyMotorDriver; use MyMotorDriver;
 with MicroBit.Types; use MicroBit.Types;
 With Ada.Real_Time; use Ada.Real_Time;
-with MicroBit.MotorDriver; use MicroBit.MotorDriver;
 with MyBrain; use MyBrain;
+
+-- with rarts-motordriver; use rarts-motordriver
 
 package TaskThink is
 
    task Think with Priority=> 2;
-  
+   procedure DriveAutomatic;
+   procedure InterpretRadio;
+   
+   private 
+      Threshold : Distance_cm := 10;
 end TaskThink;

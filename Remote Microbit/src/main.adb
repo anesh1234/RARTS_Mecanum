@@ -13,6 +13,9 @@ procedure Main is
    --Defining accelData and threshold for acceleromenter
    accelData      : All_Axes_Data;
    accelThreshold : constant := 150;
+
+   procedure TransmitData (TXdata : Radio.RadioData; Data : UInt8);
+
 begin
    TxData.Length   :=
      3 +

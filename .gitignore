@@ -6,3 +6,4 @@
 
 #ignore everything in Obj
 Project/obj/
+Mecanum Car/obj/itrs-loc.xml

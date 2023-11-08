@@ -1,5 +1,5 @@
 with MicroBit.I2C;
-package body rarts.MotorDriver is
+package body RARTS.MotorDriver is
 
 
    MD  : DFR0548.MotorDriver (MicroBit.I2C.ControllerExt);
@@ -78,4 +78,4 @@ package body rarts.MotorDriver is
 
 begin
    Initialize;
-end rarts.MotorDriver;
+end RARTS.MotorDriver;

@@ -41,16 +41,16 @@ begin
          TransmitData(TxData, 1);
       elsif accelData.X > accelThreshold then
          MicroBit.DisplayRT.Symbols.Left_Arrow;
-         TransmitData(TxData, 1);
+         TransmitData(TxData, 5);
       elsif accelData.X < -accelThreshold then
          MicroBit.DisplayRT.Symbols.Right_Arrow;
-         TransmitData(TxData, 1);
+         TransmitData(TxData, 6);
       elsif accelData.Y > accelThreshold then
          MicroBit.DisplayRT.Symbols.Up_Arrow;
-         TransmitData(TxData, 1);
+         TransmitData(TxData, 3);
       elsif accelData.Y < -accelThreshold then
          MicroBit.DisplayRT.Symbols.Down_Arrow;
-         TransmitData(TxData, 1);
+         TransmitData(TxData, 4);
       else
          MicroBit.DisplayRT.Symbols.Heart;
 

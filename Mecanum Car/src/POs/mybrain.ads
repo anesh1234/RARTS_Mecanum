@@ -1,5 +1,6 @@
 with MicroBit.Types; use MicroBit.Types;
 with MicroBit.Radio; use MicroBit.Radio;
+with MicroBit.Console; use MicroBit.Console;
 with HAL; use HAL;
 
 --Important: use Microbit.IOsForTasking for controlling pins as the timer used there is implemented as an protected object
@@ -10,27 +11,33 @@ with DFR0548;  -- using the types defined here
 package MyBrain is
 
          
-   subtype RartsUInt8 is UInt8 range 0 .. 11;
+   -- subtype RartsUInt8 is UInt8 range 0 .. 11;
    
    protected Brain is
       function GetMeasurementSensorFront return Distance_cm; -- concurrent read operations are now possible
       function GetMeasurementSensorBack return Distance_cm; -- concurrent read operations are now possible
       function GetDirection return Directions; -- concurrent read operations are now possible
       function GetModeBool return Boolean;
-      function GetRXdata return RartsUInt8;
+      function GetRXdata return UInt8;
+      function GetSpeed return Speeds;
+      
   
       procedure SetMeasurementSensorFront (V : Distance_cm); -- but concurrent read/write are not!
       procedure SetMeasurementSensorBack (V : Distance_cm); -- but concurrent read/write are not!
       procedure SetDirection (V : Directions); -- but concurrent read/write are not!
-      procedure SetModeBool (V : Boolean);
+      procedure SetModeBool (I : Integer);
       procedure SetRXdata (Data : UInt8);
+      procedure SetSpeed (I : Integer);
       
    private  
       MeasurementSensorFront : Distance_cm := 0;
       MeasurementSensorBack : Distance_cm := 0;
+      FrontBlocked : Boolean := False;
+      BackBlocked : Boolean := False;
       ModeBool : Boolean := False;
-      MyRxdata : RartsUInt8 := 0;
+      MyRxdata : UInt8 := 0;
       DriveDirection : Directions := Stop;
+      Speed : Speeds;
    end Brain;
 
 end MyBrain;

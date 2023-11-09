@@ -26,9 +26,15 @@ package body MyBrain is
       end GetMeasurementSensorBack;
       
       
-      procedure SetModeBool (V : Boolean) is
+      procedure SetModeBool (I : Integer) is
       begin
-         ModeBool := V;
+          Put_Line("Entered SetModeBool");
+         if I = 1 then
+            ModeBool := True;
+            Put_Line("ModeBool set to True");
+         elsif I = 2 then
+            ModeBool := False;
+         end if;
       end SetModeBool;
    
       
@@ -44,7 +50,7 @@ package body MyBrain is
       end SetRXdata;
       
       
-      function GetRXdata return RartsUInt8 is
+      function GetRXdata return UInt8 is
       begin
          return MyRxdata;
       end GetRXdata;
@@ -60,6 +66,20 @@ package body MyBrain is
       begin
          return DriveDirection;
       end GetDirection;
+      
+      procedure SetSpeed (I : Integer) is
+      begin
+         if I = 1 then
+            Speed := (2047, 2047, 2047, 2047);
+         elsif I = 2 then
+            Speed := (4095, 4095, 4095, 4095);
+         end if;
+      end SetSpeed;
+      
+      function GetSpeed return Speeds is
+      begin
+         return Speed;
+      end GetSpeed;
       
       
    end Brain;

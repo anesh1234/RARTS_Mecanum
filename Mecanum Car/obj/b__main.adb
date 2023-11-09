@@ -58,7 +58,7 @@ package body ada_main is
    E259 : Short_Integer; pragma Import (Ada, E259, "mybrain_E");
    E124 : Short_Integer; pragma Import (Ada, E124, "taskact_E");
    E275 : Short_Integer; pragma Import (Ada, E275, "tasksense_E");
-   E281 : Short_Integer; pragma Import (Ada, E281, "taskthink_E");
+   E282 : Short_Integer; pragma Import (Ada, E282, "taskthink_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 4) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -255,7 +255,7 @@ package body ada_main is
       E275 := E275 + 1;
       Taskthink'Elab_Spec;
       Taskthink'Elab_Body;
-      E281 := E281 + 1;
+      E282 := E282 + 1;
    end adainit;
 
    procedure Ada_Main_Program;

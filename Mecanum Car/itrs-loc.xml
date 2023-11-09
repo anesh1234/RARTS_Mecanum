@@ -1,54 +1,14 @@
 <?xml version="1.0"?>
-<Locations>
+<Locations >
   <Project>
     <vfs_file />
     <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\rartsmotordriver.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\rartsmotordriver.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\mycontroller.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\POs\mybrain.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\POs\mybrain.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\Tasks\taskact.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 32" line=" 44" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\Tasks\taskact.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
       <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\Tasks\tasksense.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 45" line=" 48" >
+    <file_marker column=" 1" line=" 1" >
       <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
       <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\Tasks\tasksense.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\Tasks\taskthink.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\itrs.gpr</vfs_project>
-      <vfs_file>C:\Users\ander\Dropbox\PC\Documents\git-repos\RARTS_Mecanum\Mecanum Car\src\rartsmotordriver.adb</vfs_file>
     </file_marker>
     <file_marker current="true" column=" 1" line=" 1" >
       <vfs_project />

@@ -11,5 +11,4 @@ package TaskThink is
    
 private 
    Threshold : Distance_cm := 10;
-   MyRXdata  : RartsUInt8 := 0;
 end TaskThink;

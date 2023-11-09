@@ -73,6 +73,7 @@ package ada_main is
    --  system.traceback_entries%b
    --  system.unsigned_types%s
    --  interfaces.nrf52.rtc%s
+   --  system.img_uns%s
    --  system.wch_con%s
    --  system.wch_con%b
    --  system.wch_jis%s

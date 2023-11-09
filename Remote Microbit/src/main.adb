@@ -6,20 +6,23 @@ with MicroBit.Buttons;           use MicroBit.Buttons;
 with MicroBit.Accelerometer;
 with MicroBit.DisplayRT;
 with MicroBit.DisplayRT.Symbols; use MicroBit;
+
+
 procedure Main is
-   RXdata : Radio.RadioData;
-   TxData : Radio.RadioData;
+   RXdata                                               : Radio.RadioData;
+   TxData                                               : Radio.RadioData;
 
    --Defining accelData and threshold for acceleromenter
-   accelData      : All_Axes_Data;
-   accelThreshold : constant := 150;
-
-   procedure TransmitData (TXdata : Radio.RadioData; Data : UInt8);
+   accelData                                            : All_Axes_Data;
+   accelThreshold                                       : constant := 100;
+   diaAccelThreshold                                       : constant := 50;
+   temp : UInt8 := 0;
+   --function TransmitData (TXdata                      : Radio.RadioData; Data : UInt8);
 
 begin
    TxData.Length   :=
      3 +
-     2; -- This is important! Header is 4-1=3, payload is 2 bytes. If higher payload needed change this to a max of 32.
+       1; -- This is important! Header is 4-1=3, payload is 2 bytes. If higher payload needed change this to a max of 32.
    TxData.Version  :=
      12;  -- Since CRC is a bit buggy (see Radio package), current implementation uses both length and version as additional hardcoded crc check so make sure they match in both sender and receiver
    TxData.Group    :=
@@ -33,9 +36,10 @@ begin
       Protocol       => TxData.Protocol);
 
    Radio.StartReceiving;
-   Put_Line (Radio.State); -- this should report Status: 3, meaning in RX mode
+   Put_Line (Radio.State); -- this should report Status : 3, meaning in RX mode
 
    loop
+
       --Read accel data
       AccelData := Accelerometer.AccelData;
 
@@ -45,63 +49,61 @@ begin
       if MicroBit.Buttons.State (Button_A) = Pressed and
         MicroBit.Buttons.State (Button_B) = Pressed
       then
-         TransmitData (TxData, 1);
+         TxData.Payload(1) := 1;
+         Radio.Transmit(TxData);
+
+      elsif accelData.X > diaAccelThreshold and accelData.Y > diaAccelThreshold then
+         TxData.Payload(1) := 7;
+         Radio.Transmit(TxData);
+
+      elsif accelData.X > diaAccelThreshold and accelData.Y < -diaAccelThreshold then
+         TxData.Payload(1) := 8;
+         Radio.Transmit(TxData);
+
+      elsif accelData.X < -diaAccelThreshold and accelData.Y > diaAccelThreshold then
+         TxData.Payload(1) := 9;
+         Radio.Transmit(TxData);
+
+
+      elsif accelData.X < -diaAccelThreshold and accelData.Y < -diaAccelThreshold then
+         TxData.Payload(1) := 10;
+         Radio.Transmit(TxData);
+
 
       elsif accelData.X > accelThreshold then
-         if accelData.Y > accelThreshold then
-            --Dia FL
-            TransmitData (TxData, 7);
-         else
-            MicroBit.DisplayRT.Symbols.Left_Arrow;
-            TransmitData (TxData, 5);
-         end if;
+         MicroBit.DisplayRT.Symbols.Left_Arrow;
+         TxData.Payload(1) := 5;
+         Radio.Transmit(TxData);
+
 
       elsif accelData.X < -accelThreshold then
-         if accelData.Y < -accelThreshold then
-            --Dia BR
-            TransmitData (TxData, 10);
-         else
-            MicroBit.DisplayRT.Symbols.Right_Arrow;
-            TransmitData (TxData, 6);
-         end if;
+         MicroBit.DisplayRT.Symbols.Right_Arrow;
+         TxData.Payload(1) := 6;
+         Radio.Transmit(TxData);
+
 
       elsif accelData.Y > accelThreshold then
-         if accelData.X < -accelThreshold then
-            --Dia FR
-            TransmitData (TxData, 8);
-         else
-            MicroBit.DisplayRT.Symbols.Left_Arrow;
-            TransmitData (TxData, 5);
-         end if;
          MicroBit.DisplayRT.Symbols.Up_Arrow;
-         TransmitData (TxData, 3);
+         TxData.Payload(1) := 3;
+         Radio.Transmit(TxData);
 
       elsif accelData.Y < -accelThreshold then
-         if accelData.X > accelThreshold then
-            --Dia BL
-            TransmitData (TxData, 9);
-         else
-            MicroBit.DisplayRT.Symbols.Right_Arrow;
-            TransmitData (TxData, 6);
-         end if;
          MicroBit.DisplayRT.Symbols.Down_Arrow;
-         TransmitData (TxData, 4);
+         TxData.Payload(1) := 4;
+         Radio.Transmit(TxData);
 
       else
          MicroBit.DisplayRT.Symbols.Heart;
-         TransmitData (TxData, 11);
+         TxData.Payload(1) := 11;
+         Radio.Transmit(TxData);
 
       end if;
       --End of logic for accelerometer
 
-      -- repeat every 500ms
-      delay (0.5);
+      Put(UInt8'Image(temp));
+      temp := temp +1;
+      Put_Line(UInt8'Image(TxData.Payload(1)));
+      delay (0.6);
 
    end loop;
 end Main;
-
-procedure TransmitData (TXdata : Radio.RadioData; Data : UInt8) is
-begin
-   TxData.Payload (1) := Data;
-   Radio.Transmit (TXdata);
-end TransmitData;

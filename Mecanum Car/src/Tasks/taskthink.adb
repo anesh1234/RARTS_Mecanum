@@ -7,9 +7,8 @@ package body TaskThink is
    begin
       loop
          myClock := Clock;
-         
          InterpretRadio;
-         
+
          if Brain.GetModeBool = False then
             DriveAutomatic;
          end if;
@@ -32,28 +31,26 @@ package body TaskThink is
          Brain.SetDirection (Stop);
          Brain.SetSpeed(1);
       end if;
+
    end DriveAutomatic;
-   
    
    procedure InterpretRadio is
    begin
+
       case Brain.GetRXdata is
          when 0      =>   null;
          when 1      =>   Brain.SetModeBool (1);
          when 2      =>   Brain.SetModeBool (2);
          when others => null;
       end case;
-     
+
       if Brain.GetModeBool = True then
          case Brain.GetRXdata is
-            when 0      =>   null;
-            when 1      =>   null;
-            when 2      =>   null;
             when 3      =>   Brain.SetDirection (Forward);
             when 4      =>   Brain.SetDirection (Back);
             when 5      =>   Brain.SetDirection (Left);
             when 6      =>   Brain.SetDirection (Right);
-            when 7      =>   Brain.SetDirection (Dia_Fl);
+            when 7      =>   Brain.SetDirection (Dia_FL);
             when 8      =>   Brain.SetDirection (Dia_FR);
             when 9      =>   Brain.SetDirection (Dia_BL);
             when 10     =>   Brain.SetDirection (Dia_BR);
@@ -61,7 +58,7 @@ package body TaskThink is
             when others =>   null;
          end case;
       end if;
+
    end InterpretRadio;
-   
    
 end TaskThink;

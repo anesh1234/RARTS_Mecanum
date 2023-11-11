@@ -32,8 +32,6 @@ package MyBrain is
    private  
       MeasurementSensorFront : Distance_cm := 0;
       MeasurementSensorBack : Distance_cm := 0;
-      FrontBlocked : Boolean := False;
-      BackBlocked : Boolean := False;
       ModeBool : Boolean := False;
       MyRxdata : UInt8 := 0;
       DriveDirection : Directions := Stop;

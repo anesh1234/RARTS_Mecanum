@@ -52,6 +52,10 @@ begin
          TxData.Payload(1) := 1;
          Radio.Transmit(TxData);
 
+      elsif MicroBit.Buttons.State (Logo) = Pressed then
+         TxData.Payload(1) := 2;
+         Radio.Transmit(TxData);
+
       elsif accelData.X > diaAccelThreshold and accelData.Y > diaAccelThreshold then
          TxData.Payload(1) := 7;
          Radio.Transmit(TxData);

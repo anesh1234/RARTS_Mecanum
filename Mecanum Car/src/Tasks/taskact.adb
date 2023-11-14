@@ -17,6 +17,10 @@ package body TaskAct is
 
          Drive(Brain.GetDirection, Brain.GetSpeed);
          
+         if Brain.GetDirection = Stop then
+            delay until myClock + Milliseconds(30);  -- approximately the time the sensor needs to return to the position in which it found an obstacle
+         end if;
+         
          if Brain.GetModeBool = True then
             Display('M');
          else

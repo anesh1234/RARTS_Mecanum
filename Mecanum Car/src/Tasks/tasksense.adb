@@ -51,7 +51,7 @@ package body TaskSense is
          DistanceBack := sensorBack.Read;
          Brain.SetMeasurementSensorBack (DistanceBack);
             
-         delay until myClock + Milliseconds(200); --random period
+         delay until myClock + Milliseconds(65); --random period
       end loop;
    end sense;
 

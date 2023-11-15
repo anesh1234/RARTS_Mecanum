@@ -9,6 +9,6 @@ use MicroBit;
 
 package TaskSense is
 
-   task Sense with Priority => 1; --random priority. argue and calculate what these values should be
+   task Sense with Priority => 3;
   
 end TaskSense;

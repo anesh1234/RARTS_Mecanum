@@ -9,6 +9,7 @@ package TaskThink is
    procedure InterpretRadio;
    
 private 
+   
    Threshold : Distance_cm := 15;
    
 end TaskThink;

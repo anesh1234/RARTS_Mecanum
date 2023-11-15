@@ -306,7 +306,6 @@ package ada_main is
    --  tasksense%b
    --  taskthink%s
    --  taskthink%b
-   --  mycontroller%s
    --  main%b
    --  END ELABORATION ORDER
 

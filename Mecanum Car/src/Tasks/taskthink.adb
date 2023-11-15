@@ -13,7 +13,7 @@ package body TaskThink is
             DriveAutomatic;
          end if;
 
-         delay until myClock + Milliseconds(70);  --random period
+         delay until myClock + Milliseconds(70);
       end loop;
    end think;
    

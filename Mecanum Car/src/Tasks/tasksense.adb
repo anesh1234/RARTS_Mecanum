@@ -8,6 +8,7 @@ package body TaskSense is
       
       package sensorFront is new Ultrasonic(MB_P13, MB_P12);
       package sensorBack is new Ultrasonic(MB_P16, MB_P15);
+      
       DistanceFront : Distance_cm;
       DistanceBack : Distance_cm;
       
@@ -31,12 +32,7 @@ package body TaskSense is
       Put_Line(Radio.State); -- this should report Status: 3, meaning in RX mode
 
       loop
-         myClock := Clock; --important to get current time such that the period is exactly 200ms.
-                           --you need to make sure that the instruction NEVER takes more than this period. 
-                           --make sure to measure how long the task needs, see Tasking_Calculate_Execution_Time example in the repository.
-                           --What if for some known or unknown reason the execution time becomes larger?
-                           --When Worst Case Execution Time (WCET) is overrun so higher than your set period, see : https://www.sigada.org/ada_letters/dec2003/07_Puente_final.pdf
-                           --In this template we put the responsiblity on the designer/developer.
+         myClock := Clock;
          
          while Radio.DataReady loop
             RXdata := Radio.Receive;
@@ -44,14 +40,13 @@ package body TaskSense is
             Brain.SetRXdata(RXdata.Payload(1));
          end loop;
          
-         
          DistanceFront := sensorFront.Read;
          Brain.SetMeasurementSensorFront (DistanceFront);
          
          DistanceBack := sensorBack.Read;
          Brain.SetMeasurementSensorBack (DistanceBack);
             
-         delay until myClock + Milliseconds(65); --random period
+         delay until myClock + Milliseconds(65);
       end loop;
    end sense;
 

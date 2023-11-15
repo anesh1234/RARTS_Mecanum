@@ -9,9 +9,6 @@ with RartsMotorDriver; use RartsMotorDriver;
 with DFR0548;  -- using the types defined here
 
 package MyBrain is
-
-         
-   -- subtype RartsUInt8 is UInt8 range 0 .. 11;
    
    protected Brain is
       function GetMeasurementSensorFront return Distance_cm; -- concurrent read operations are now possible
@@ -21,7 +18,6 @@ package MyBrain is
       function GetRXdata return UInt8;
       function GetSpeed return Speeds;
       
-  
       procedure SetMeasurementSensorFront (V : Distance_cm); -- but concurrent read/write are not!
       procedure SetMeasurementSensorBack (V : Distance_cm); -- but concurrent read/write are not!
       procedure SetDirection (V : Directions); -- but concurrent read/write are not!

@@ -30,16 +30,13 @@ package body TaskAct is
             TurnServo;
          end if;
          
-         delay until myClock + Milliseconds(150);  --random period, but faster than 20 ms is no use because Set_Analog_Period_Us(20000) !
-                                                  --faster is better but note the weakest link: if decisions in the thinking task come at 100ms and acting come at 20ms 
-                                                  --then no change is set in the acting task for at least 5x (and is wasting power to wake up and execute task!)
+         delay until myClock + Milliseconds(150);
       end loop;
    end act;
    
    procedure Setup is
    begin
-      --For example set the PWM period, as you only need to do this once
-      Set_Analog_Period_Us (20_000); --20 ms = 50 Hz, typical for many actuators. You can change this, check the motor behavior with an oscilloscope.
+      Set_Analog_Period_Us (20_000); --20 ms = 50 Hz, typical for many actuators.
       Servo(8,0);
       delay 1.0;
    end Setup;

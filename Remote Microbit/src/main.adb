@@ -61,11 +61,11 @@ begin
          Radio.Transmit(TxData);
 
       elsif accelData.X > diaAccelThreshold and accelData.Y < -diaAccelThreshold then
-         TxData.Payload(1) := 8;
+         TxData.Payload(1) := 9;
          Radio.Transmit(TxData);
 
       elsif accelData.X < -diaAccelThreshold and accelData.Y > diaAccelThreshold then
-         TxData.Payload(1) := 9;
+         TxData.Payload(1) := 8;
          Radio.Transmit(TxData);
 
 

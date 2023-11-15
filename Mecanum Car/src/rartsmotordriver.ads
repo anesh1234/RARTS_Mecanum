@@ -11,6 +11,8 @@ package RartsMotorDriver is
                        Dia_FR,
                        Dia_BL,
                        Dia_BR,
+                       RotateLeft,
+                       RotateRight,
                        Stop);
 
    type Speeds is record

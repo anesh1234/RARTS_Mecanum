@@ -58,6 +58,16 @@ package body RartsMotorDriver is
                          lb => (0, speed.lb),
                          lf => (0,0),
                          rb => (0,0));
+         when RotateLeft =>
+            Drive_Wheels(rf => (0, Speed.rf),
+                         rb => (0, Speed.rb),
+                         lf => (Speed.lf, 0),
+                         lb => (Speed.lb, 0));
+         when RotateRight =>
+            Drive_Wheels(rf => (Speed.rf, 0),
+                         rb => (Speed.rb, 0),
+                         lf => (0, Speed.lf),
+                         lb => (0, Speed.lb));
          when Stop =>
             Drive_Wheels(rf => (0, 0),
                          rb => (0, 0),

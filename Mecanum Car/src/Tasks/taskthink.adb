@@ -55,6 +55,8 @@ package body TaskThink is
             when 9      =>   Brain.SetDirection (Dia_BL);
             when 10     =>   Brain.SetDirection (Dia_BR);
             when 11     =>   Brain.SetDirection (Stop);
+            when 12     =>   Brain.SetDirection (RotateLeft);
+            when 13     =>   Brain.SetDirection (RotateRight);
             when others =>   null;
          end case;
       end if;

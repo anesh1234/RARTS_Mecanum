@@ -14,6 +14,7 @@ package body TaskAct is
       Setup; -- we do Setup once at the start of the task;
       loop
          myClock := Clock;
+         
 
          Drive(Brain.GetDirection, Brain.GetSpeed);
          
@@ -21,6 +22,7 @@ package body TaskAct is
             delay until myClock + Milliseconds(30);  -- approximately the time the sensor needs to return to the position in which it found an obstacle
          end if;
          
+         Clear;
          if Brain.GetModeBool = True then
             Display('M');
          else

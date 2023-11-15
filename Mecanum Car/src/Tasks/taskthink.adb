@@ -21,9 +21,18 @@ package body TaskThink is
    procedure DriveAutomatic is
    begin
 
-      if Brain.GetMeasurementSensorFront > Threshold and Brain.GetMeasurementSensorBack < Threshold then
+      if Brain.GetRXdata = 12 then
+         Brain.SetDirection(RotateLeft);
+         Brain.SetSpeed(2);
+         
+      elsif Brain.GetRxdata = 13 then
+         Brain.SetDirection(RotateRight);
+         Brain.SetSpeed(2);
+         
+      elsif Brain.GetMeasurementSensorFront > Threshold and Brain.GetMeasurementSensorBack < Threshold then
          Brain.SetDirection (Forward);
          Brain.SetSpeed(2);
+         
       elsif Brain.GetMeasurementSensorFront > Threshold then
          Brain.SetDirection (Forward);
          Brain.SetSpeed(1);

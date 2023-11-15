@@ -52,6 +52,14 @@ begin
          TxData.Payload(1) := 1;
          Radio.Transmit(TxData);
 
+      elsif MicroBit.Buttons.State (Button_A) = Pressed then
+         TxData.Payload(1) := 12;
+         Radio.Transmit(TxData);
+
+      elsif MicroBit.Buttons.State (Button_B) = Pressed then
+         TxData.Payload(1) := 13;
+         Radio.Transmit(TxData);
+
       elsif MicroBit.Buttons.State (Logo) = Pressed then
          TxData.Payload(1) := 2;
          Radio.Transmit(TxData);

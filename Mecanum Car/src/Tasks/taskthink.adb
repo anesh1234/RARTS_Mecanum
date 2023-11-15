@@ -1,7 +1,7 @@
 with RartsMotorDriver; use RartsMotorDriver;
 
-package body TaskThink is
 
+package body TaskThink is
    task body think is
       myClock : Time;
    begin
@@ -21,6 +21,8 @@ package body TaskThink is
    procedure DriveAutomatic is
    begin
 
+      
+      
       if Brain.GetRXdata = 12 then
          Brain.SetDirection(RotateLeft);
          Brain.SetSpeed(2);
@@ -39,6 +41,7 @@ package body TaskThink is
       else
          Brain.SetDirection (Stop);
          Brain.SetSpeed(1);
+         
       end if;
 
    end DriveAutomatic;

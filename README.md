@@ -6,6 +6,7 @@ The project consists of two independent GNAT Studio projects with different sour
 The creators are: Stian Nordholm and Anders Mørk Minde
 
 To clone sucsessfully, remember the submodules:
+
 `git clone --recurse-submodules https://github.com/aiunderstand/Ada-Embedded-Project-MicroBitV2.git`
 
 This project was forked from the template for USN BSc intelligent real-time systems course:
